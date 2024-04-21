@@ -1,0 +1,15 @@
+.flex_between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex_start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.layout {
+  width: 1200px;
+  margin: 0 auto;
+}
