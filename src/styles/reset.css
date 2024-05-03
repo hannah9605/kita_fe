@@ -12,7 +12,6 @@ html,
 body {
   max-width: 100%;
   min-height: 100%;
-  overflow: hidden;
 }
 html {
   overflow-x: hidden;
@@ -28,6 +27,9 @@ body {
   color: #333;
   line-height: 1;
   letter-spacing: -0.02em;
+  height: 100%;
+  min-height: 100vh;
+  /* min-width: 100vw; */
 }
 ul,
 li,

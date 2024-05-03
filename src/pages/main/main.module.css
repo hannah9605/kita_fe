@@ -1,0 +1,57 @@
+/* banner */
+.banner_wr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 82px;
+  margin-bottom: 48px;
+  height: 250px;
+}
+.banner1 {
+  width: 77.083%;
+  border: 1px solid var(--coolgray01--);
+  margin-right: 25px;
+  border-radius: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.banner1 > img {
+  margin-top: -44px;
+  margin-left: 32px;
+  margin-right: 13px;
+}
+.banner1 > button {
+  position: absolute;
+  right: 27px;
+  bottom: 27px;
+}
+.banner_txt > p:nth-child(1) {
+  font-family: "EsaManru";
+  font-size: 20px;
+  color: var(--coolgray03--);
+}
+
+.banner_txt > p:nth-child(2) {
+  margin: 7px 0 27px;
+  font-family: "JalnanGothic";
+  font-size: 32px;
+}
+.banner2 {
+  background: var(--black--);
+  border-radius: 10px;
+  width: 250px;
+  height: 100%;
+  padding: 10px 10px 30px 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.banner2 > p {
+  font-family: "esamanru";
+  font-size: 36px;
+  color: white;
+  line-height: 1.15;
+}

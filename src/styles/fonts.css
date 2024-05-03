@@ -30,6 +30,7 @@
   font-style: normal;
   src: url(/public/fonts/Pretendard-Medium.woff) format("woff");
 }
+
 /* @font-face {
   font-family: "Pretendard";
   font-weight: 600;
@@ -47,10 +48,25 @@
   font-weight: 800;
   font-style: bold;
   src: url(/public/fonts/Pretendard-ExtraBold.woff) format("woff");
-}
+} */
+
 @font-face {
   font-family: "Pretendard";
   font-weight: 900;
   font-style: bold;
   src: url(/public/fonts/Pretendard-Black.woff) format("woff");
-} */
+}
+
+@font-face {
+  font-family: "JalnanGothic";
+  font-weight: 400;
+  font-style: normal;
+  src: url(/public/fonts/JalnanGothic.woff) format("woff");
+}
+
+@font-face {
+  font-family: "EsaManru";
+  font-weight: 500;
+  font-style: normal;
+  src: url(/public/fonts/EsaManruMedium.woff) format("woff");
+}
