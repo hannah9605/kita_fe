@@ -17,6 +17,9 @@
   align-items: center;
   justify-content: center;
 }
+.flex_col {
+  flex-direction: column;
+}
 /* layout */
 .layout {
   max-width: 1200px;
@@ -41,19 +44,29 @@
   height: 80px;
   width: 100%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  z-index: 99;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /* font_style */
-.title_20 {
+.bn_subtitle {
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   color: var(--black--);
+  margin-top: 7px;
 }
 .menu_title {
   font-size: 32px;
   font-weight: 600;
 }
-
+.bn_title_32 {
+  font-family: "JalnanGothic";
+  font-size: 32px;
+  font-weight: 400;
+}
 /* 버튼 */
 .btn {
   display: flex;
@@ -157,7 +170,6 @@ input[type="text"] {
 .view_num::before {
   background: url(/public/images/view.png) no-repeat;
 }
-
 /* footer */
 .f_logo {
   font-size: 24px;
@@ -172,4 +184,33 @@ input[type="text"] {
   font-weight: 400;
   font-size: 13px;
   line-height: 1.2;
+}
+.footer_txt > li:last-child {
+  margin-top: 9px;
+}
+.footer_txt > li:nth-child(2) {
+  margin-top: 15px;
+}
+
+/* 페이지 공통 */
+.page_bn_wr {
+  height: 250px;
+  position: relative;
+  top: -20px;
+  background: var(--coolgray02--);
+  border-radius: 10px;
+  border: 1px solid var(--coolgray01--);
+}
+
+/* 커스텀 */
+
+#search .list_section {
+  margin-top: 23px;
+}
+#kitList .list_section:nth-child(1) {
+  padding: 97px 0 63px;
+}
+#kitList .list_section:nth-child(2) {
+  padding-top: 80px;
+  border-top: 1px solid var(--coolgray01--);
 }

@@ -5,8 +5,11 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className=" flex_center">
-      <div className="flex_start flex_top layout">
+    <div className=" flex_center" style={{ borderTop: "1px solid #ccc" }}>
+      <div
+        style={{ padding: "35px 0 74px 0  " }}
+        className="flex_start flex_top layout"
+      >
         <Link style={{ marginRight: "68px" }} className="f_logo" to="/">
           KIT:A
         </Link>

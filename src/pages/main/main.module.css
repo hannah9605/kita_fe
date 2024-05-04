@@ -23,7 +23,15 @@
   margin-left: 32px;
   margin-right: 13px;
 }
-.banner1 > button {
+.work_btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--black--);
+  width: auto;
+  height: auto;
   position: absolute;
   right: 27px;
   bottom: 27px;
@@ -36,8 +44,6 @@
 
 .banner_txt > p:nth-child(2) {
   margin: 7px 0 27px;
-  font-family: "JalnanGothic";
-  font-size: 32px;
 }
 .banner2 {
   background: var(--black--);
@@ -54,4 +60,53 @@
   font-size: 36px;
   color: white;
   line-height: 1.15;
+}
+/* 하단배너 */
+.b_notice,
+.b_faq {
+  width: calc(50% - 8px);
+  border-radius: 10px;
+  padding: 35px 30px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  position: relative;
+}
+.b_notice {
+  background: var(--coolgray02--);
+}
+.b_faq {
+  background: var(--black--);
+}
+.footer_bn_txt {
+  font-size: 24px;
+  font-weight: 500;
+  color: #071c35;
+  line-height: 1.2;
+}
+.footer_bn_tit {
+  color: var(--mainRed--);
+  font-size: 15px;
+  font-weight: 900;
+  padding-bottom: 4px;
+  line-height: 1.2;
+}
+.b_faq .footer_bn_txt {
+  color: #fff;
+}
+.footer_bn_img {
+  display: flex;
+  align-items: flex-end;
+}
+.footer_bn_img > img:nth-child(1) {
+  position: absolute;
+  bottom: 15px;
+  right: 45px;
+}
+
+.footer_bn_img > img:nth-child(2) {
+  right: -5px;
+  bottom: -5px;
+  display: inline-block;
+  position: relative;
 }
