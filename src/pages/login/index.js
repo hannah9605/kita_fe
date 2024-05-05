@@ -1,8 +1,11 @@
 import React from "react";
-import axios from "axios";
+// import axios from "axios";
 import style from "./login.module.css";
 
 export default function Login() {
+  const logIn = () => {
+    window.sessionStorage.setItem("login", true);
+  };
   return (
     <div className={style.login_bg}>
       <div className={style.login_wr}>
@@ -14,7 +17,13 @@ export default function Login() {
         </div>
         <ul className={style.login_item_wr}>
           <li className={`${style.login_item} ${style.naver}`}>
-            <button>네이버 로그인</button>
+            <button
+              onClick={() => {
+                logIn();
+              }}
+            >
+              네이버 로그인
+            </button>
           </li>
           <li className={`${style.login_item} ${style.kakao}`}>
             <button>카카오 로그인</button>

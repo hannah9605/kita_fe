@@ -5,18 +5,20 @@ import style from "./nav.module.css";
 // 이미지
 
 const Nav = () => {
-  const [searchValue, setSearchValue] = useState("");
-  const navigate = useNavigate(); // useNavigate 사용
+  let loginCheck = window.sessionStorage.getItem("login");
 
+  const [searchValue, setSearchValue] = useState("");
+  const [isLogin, setIsLogin] = useState(false);
+  const [userMore, setUserMore] = useState(false);
+  const navigate = useNavigate(); // useNavigate 사용
+  console.log(loginCheck);
   const getSearch = () => {
-    console.log(searchValue);
     navigate("/Search", { replace: true, state: { word: searchValue } });
     // 이동후 초기화
     setSearchValue("");
   };
-  const handleChange = (e) => {
-    console.log(e);
 
+  const handleChange = (e) => {
     if (e.code === "Enter") {
       getSearch();
     } else {
@@ -24,6 +26,10 @@ const Nav = () => {
       setSearchValue(value);
     }
   };
+  useEffect(() => {
+    console.log("로그인변경");
+    setIsLogin(loginCheck);
+  }, [loginCheck]);
 
   return (
     <div className="nav flex_center">
@@ -65,14 +71,51 @@ const Nav = () => {
               alt="검색아이콘"
             />
           </div>
-          <button className={style.login_btn}>
-            <img
-              style={{ marginRight: "8px" }}
-              src="/images/profile.png"
-              alt="프로필아이콘"
-            />
-            로그인
-          </button>
+          {isLogin ? (
+            <div style={{ position: "relative" }} className={style.profile}>
+              <button
+                onClick={() => {
+                  setUserMore(!userMore);
+                }}
+                className={style.login_btn}
+              >
+                <img
+                  style={{ marginRight: "8px" }}
+                  src={"/images/profile.png"}
+                  alt="프로필아이콘"
+                />
+                사용자
+              </button>
+              {userMore && (
+                <ul className={style.user_more_wr}>
+                  <li>
+                    <Link to="/myPage">내정보</Link>
+                  </li>
+                  <li>
+                    <Link to="/myPage">찜목록</Link>
+                  </li>
+                  <li>
+                    <button
+                      onClick={() => {
+                        window.sessionStorage.setItem("login", false);
+                      }}
+                    >
+                      <span>로그아웃</span>
+                    </button>
+                  </li>
+                </ul>
+              )}
+            </div>
+          ) : (
+            <Link to="/Login" className={style.login_btn}>
+              <img
+                style={{ marginRight: "8px" }}
+                src={"/images/profile.png"}
+                alt="프로필아이콘"
+              />
+              로그인
+            </Link>
+          )}
         </div>
       </div>
     </div>
