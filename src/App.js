@@ -12,6 +12,9 @@ import "./styles/global.css";
 const KitListPage = React.lazy(() => import("./pages/kitList"));
 const Login = React.lazy(() => import("./pages/login"));
 const Search = React.lazy(() => import("./pages/search"));
+const Support = React.lazy(() => import("./pages/support"));
+
+const BoardDetail = React.lazy(() => import("./components/boardDetail"));
 
 function App() {
   const path = window.location.pathname;
@@ -28,6 +31,8 @@ function App() {
               {/* 사용자관리 */}
               <Route exact path="/KitList" element={<KitListPage />} />
               <Route exact path="/Search" element={<Search />} />
+              <Route exact path="/Support" element={<Support />} />
+              <Route path="/board/:idx" element={<BoardDetail />} />
             </Routes>
           </Suspense>
         </div>

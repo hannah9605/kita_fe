@@ -1,0 +1,36 @@
+.list_table_wr {
+  margin-bottom: 110px;
+}
+.list_table th {
+  font-size: 18px;
+  padding: 20px;
+  background: #f7f8f9;
+  font-weight: 600;
+}
+.list_table td {
+  font-size: 16px;
+  padding: 25px 20px;
+  font-weight: 600;
+}
+.list_table tr {
+  border-top: 1px solid var(--coolgray01--);
+}
+
+.list_table tr:last-child {
+  border-bottom: 1px solid var(--coolgray01--);
+}
+.list_table tbody tr {
+  cursor: pointer;
+}
+/* 공지사항 */
+.list_table tr > *:nth-child(1) {
+  width: 77px;
+}
+.list_table tr > *:last-child {
+  width: 115px;
+}
+
+.list_table td:last-child {
+  color: #9ba6b8;
+  font-weight: 500;
+}
