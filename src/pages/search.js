@@ -16,6 +16,7 @@ export default function Search() {
       view: 382,
       thumbnail: "/images/sample.jpg",
       id: "12",
+      scrap: true,
     },
     {
       title: "작품명2",
@@ -26,6 +27,22 @@ export default function Search() {
       id: "132",
     },
 
+    {
+      title: "작품명4",
+      auth: "작가4",
+      steam: 125,
+      view: 382,
+      thumbnail: "/images/sample.jpg",
+      id: "133332",
+    },
+    {
+      title: "작품명4",
+      auth: "작가4",
+      steam: 125,
+      view: 382,
+      thumbnail: "/images/sample.jpg",
+      id: "133332",
+    },
     {
       title: "작품명4",
       auth: "작가4",

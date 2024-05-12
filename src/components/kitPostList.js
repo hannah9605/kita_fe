@@ -24,7 +24,17 @@ export default function KitPostList({ data, title }) {
               <Link to={`/post/${item?.id}`}>
                 <div className="thumb_img_wr">
                   <img src={item?.thumbnail} alt="썸네일이미지" />
-                  <button className="thumb_bookmark" alt="북마크"></button>
+                  <button
+                    onClick={() => {}}
+                    className="thumb_bookmark"
+                    alt="북마크"
+                  >
+                    {item?.scrap ? (
+                      <img src="/images/bookmark_act.png" alt="bookmark_act" />
+                    ) : (
+                      <img src="/images/thumb_bookmark.png" alt="bookmark" />
+                    )}
+                  </button>
                 </div>
                 <p className="kit_title">{item?.title}</p>
                 <p className="kit_auth">{item?.auth}</p>
