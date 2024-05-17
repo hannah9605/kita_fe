@@ -11,7 +11,6 @@ const Nav = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [userMore, setUserMore] = useState(false);
   const navigate = useNavigate(); // useNavigate 사용
-  console.log(loginCheck);
   const getSearch = () => {
     navigate("/Search", { replace: true, state: { word: searchValue } });
     // 이동후 초기화

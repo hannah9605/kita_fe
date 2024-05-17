@@ -14,7 +14,7 @@ const Login = React.lazy(() => import("./pages/login"));
 const Search = React.lazy(() => import("./pages/search"));
 const Support = React.lazy(() => import("./pages/support"));
 
-const BoardDetail = React.lazy(() => import("./components/boardDetail"));
+const BoardDetail = React.lazy(() => import("./components/board/boardDetail"));
 
 function App() {
   const path = window.location.pathname;

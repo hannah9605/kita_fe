@@ -1,28 +1,33 @@
 .list_table_wr {
   margin-bottom: 110px;
 }
-.list_table th {
+.list_table tr:nth-child(1) th {
   font-size: 18px;
   padding: 20px;
   background: #f7f8f9;
   font-weight: 600;
+  border-top: 3px solid var(--black--);
 }
 .list_table td {
   font-size: 16px;
   padding: 25px 20px;
   font-weight: 600;
 }
-.list_table tr {
-  border-top: 1px solid var(--coolgray01--);
-}
 
 .list_table tr:last-child {
   border-bottom: 1px solid var(--coolgray01--);
 }
+.list_table thead tr ~ tr {
+  border-top: 1px solid var(--coolgray01--);
+}
 .list_table tbody tr {
   cursor: pointer;
+  border-top: 1px solid var(--coolgray01--);
 }
 /* 공지사항 */
+.list_table thead tr th:nth-child(1) {
+  border-color: var(--mainRed--);
+}
 .list_table tr > *:nth-child(1) {
   width: 77px;
 }
@@ -34,3 +39,5 @@
   color: #9ba6b8;
   font-weight: 500;
 }
+
+/* 게시물 보기 */

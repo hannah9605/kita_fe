@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import style from "./main.module.css";
 // component
 import Banner from "./banner";
-import KitPostList from "../../components/kitPostList";
+import KitPostList from "../../components/board/gallery/kitPostList";
 
 export default function Main() {
   const realTimePop = [
@@ -107,37 +107,6 @@ export default function Main() {
       id: "133332",
     },
   ];
-  const renderPostList = (_data, title) => {
-    return (
-      <div className="kit_list_wr">
-        <p className="flex_start menu_title">
-          <img src="/images/title.png" alt="bullet" />
-          <span>{title}</span>
-        </p>
-
-        <ul className="flex_between kit_list">
-          {_data?.map((item) => {
-            return (
-              <li>
-                <Link to={`/post/${item?.id}`}>
-                  <div className="thumb_img_wr">
-                    <img src={item?.thumbnail} alt="썸네일이미지" />
-                    <button className="thumb_bookmark" alt="북마크"></button>
-                  </div>
-                  <p className="kit_title">{item?.title}</p>
-                  <p className="kit_auth">{item?.auth}</p>
-                  <div>
-                    <span className="bookmark_num">{item?.steam}</span>
-                    <span className="view_num">{item?.view}</span>
-                  </div>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-    );
-  };
 
   return (
     <div className=" layout padding_bt_200">

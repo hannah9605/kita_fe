@@ -2,7 +2,7 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 // import axios from "axios";
 // component
-import KitPostList from "../components/kitPostList";
+import KitPostList from "../components/board/gallery/kitPostList";
 import PageBanner from "../components/pageBanner";
 
 export default function Search() {
