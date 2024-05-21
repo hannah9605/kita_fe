@@ -7,7 +7,7 @@ import PhotoTable from "./photoTable";
 
 export default function KitPostList({ data, title }) {
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(4);
+  const [postsPerPage, setPostsPerPage] = useState(20);
   // useState(20); // 나중에 바꾸기
 
   /* 페이징 */
@@ -31,7 +31,11 @@ export default function KitPostList({ data, title }) {
           <span>{ListTitle[title] ? ListTitle[title] : null}</span>
         </p>
       )}
-      <PhotoTable data={currentPosts(data)} />
+      <PhotoTable
+        data={
+          title === "list" || title === "search" ? currentPosts(data) : data
+        }
+      />
 
       {title === "list" || title === "search" ? (
         <Pagination

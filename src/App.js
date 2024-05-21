@@ -14,6 +14,9 @@ const Login = React.lazy(() => import("./pages/login"));
 const Search = React.lazy(() => import("./pages/search"));
 const Support = React.lazy(() => import("./pages/support"));
 
+const Mypage = React.lazy(() => import("./pages/[...afterLogin]/myPage"));
+const BookMark = React.lazy(() => import("./pages/[...afterLogin]/bookmark"));
+
 const BoardDetail = React.lazy(() => import("./components/board/boardDetail"));
 
 function App() {
@@ -32,7 +35,11 @@ function App() {
               <Route exact path="/KitList" element={<KitListPage />} />
               <Route exact path="/Search" element={<Search />} />
               <Route exact path="/Support" element={<Support />} />
+
               <Route path="/board/:idx" element={<BoardDetail />} />
+              {/*로그인 전용 */}
+              <Route exact path="/Mypage" element={<Mypage />} />
+              <Route exact path="/Bookmark" element={<BookMark />} />
             </Routes>
           </Suspense>
         </div>

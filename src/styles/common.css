@@ -8,15 +8,17 @@
   justify-content: flex-start;
   align-items: center;
 }
-.flex_top {
-  align-items: flex-start;
-}
-
 .flex_center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
+.flex_top {
+  display: flex;
+  align-items: flex-start;
+}
+
 .flex_col {
   flex-direction: column;
 }
@@ -26,7 +28,16 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
+  height: 100%;
+  min-height: calc(100vh - 280px);
 }
+.default_box {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
 .padding_bt_200 {
   padding-bottom: 200px;
 }
@@ -67,6 +78,11 @@
   font-family: "JalnanGothic";
   font-size: 32px;
   font-weight: 400;
+}
+.menu_subtitle {
+  font-size: 16px;
+  color: var(--coolgray05--);
+  font-weight: 600;
 }
 .red {
   color: var(--mainRed--);
@@ -177,6 +193,7 @@ input[type="text"] {
   background: url(/public/images/view.png) no-repeat;
 }
 /* footer */
+
 .f_logo {
   font-size: 24px;
   font-weight: 900;
@@ -202,6 +219,7 @@ input[type="text"] {
 .page_bn_wr {
   height: 250px;
   position: relative;
+  padding: 0 70px;
   top: -20px;
   background: var(--coolgray02--);
   border-radius: 10px;
@@ -219,6 +237,10 @@ input[type="text"] {
 #kitList .list_section:nth-child(2) {
   padding-top: 80px;
   border-top: 1px solid var(--coolgray01--);
+}
+
+#support .menu_title {
+  margin: 30px 0;
 }
 
 /* 탭 */
@@ -261,26 +283,38 @@ input[type="text"] {
   background: var(--mainRed--);
 }
 
-/* 페이지 리스트 */
-.pagination .page_link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
-  color: #000;
-  font-weight: 500;
-  width: 40px;
-  height: 40px;
-  border-radius: 3px;
+/* faq */
+
+.faq_list {
+  border-bottom: 1px solid var(--coolgray02--);
   cursor: pointer;
-}
-.pagination .page_item ~ .page_item {
-  margin: 0 15px;
-}
-.page_item.active .page_link {
-  border: 1px solid #e6e6e6;
+  font-weight: 600;
 }
 
-.page_item.active .page_link {
-  color: var(--mainRed--);
+.faq_list > p > * {
+  padding: 25px 0;
+}
+.faq_list > p > p {
+  padding-left: 25px;
+  width: calc(100% - 77px);
+}
+.faq_list:nth-child(1) > .q_list > * {
+  border-top: 3px solid #000;
+}
+.faq_list:nth-child(1) > .q_list > .bullet {
+  border-color: var(--mainRed--);
+}
+.faq_list .a_list {
+  min-height: 200px;
+}
+
+.faq_list .bullet {
+  display: inline-block;
+  width: 77px;
+  text-align: center;
+}
+
+.faq_list .a_list {
+  background: #f7f8f9;
+  border-top: 1px solid var(--coolgray02--);
 }

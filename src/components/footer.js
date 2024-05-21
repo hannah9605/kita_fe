@@ -5,10 +5,13 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className=" flex_center" style={{ borderTop: "1px solid #ccc" }}>
+    <div
+      className=" flex_center"
+      style={{ height: "200px ", borderTop: "1px solid #ccc" }}
+    >
       <div
-        style={{ padding: "35px 0 74px 0  " }}
-        className="flex_start flex_top layout"
+        style={{ padding: "35px 0 74px 0 " }}
+        className="flex_start flex_top default_box"
       >
         <Link style={{ marginRight: "68px" }} className="f_logo" to="/">
           KIT:A

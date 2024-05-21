@@ -36,8 +36,42 @@
 }
 
 .list_table td:last-child {
-  color: #9ba6b8;
+  color: var(--coolgray05--);
   font-weight: 500;
 }
 
 /* 게시물 보기 */
+
+/* 페이지 리스트*/
+.pagination {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pagination .page_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #000;
+  font-weight: 500;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+}
+.pagination li {
+  margin: 0 15px;
+  cursor: pointer;
+}
+.page_item.active .page_link {
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.05);
+}
+
+.page_item.active .page_link {
+  color: var(--mainRed--);
+}
+.pagination li.noclick {
+  pointer-events: none;
+}

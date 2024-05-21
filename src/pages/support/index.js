@@ -5,11 +5,16 @@ import { useLocation } from "react-router-dom";
 import PageBanner from "../../components/pageBanner";
 import BoardList from "../../components/board/boardList";
 
+import axios from "axios";
+
 export default function Support() {
   const location = useLocation();
   const { _tabIndex } = location.state || {};
 
   const [tabIndex, setTabIndex] = useState(_tabIndex ? _tabIndex : 0);
+  const [noticeData, setNoticeData] = useState([]);
+  const [faqData, setFaqData] = useState([]);
+  const [showIndex, setShowIndex] = useState();
   const tabList = [
     { key: 0, title: "공지사항" },
     { key: 1, title: "FAQ" },
@@ -20,60 +25,38 @@ export default function Support() {
     { title: "제목", key: "title", style: "left" },
     { title: "등록일", key: "reg_dt" },
   ];
-  const noticeData = [
-    {
-      idx: 1,
-      title: "제목이 들어갈 자리입니다.1",
-      content: `내용이 들어갈 자리입니다.1 /n 공지사항 관련내용`,
-      auth: "kita",
-      reg_dt: "2024.05.12",
-      id: 1000,
-    },
-    {
-      idx: 2,
-      title: "제목이 들어갈 자리입니다.2",
+  const getNoticeData = async () => {
+    try {
+      const res = await axios.get("/dummy/supportList.json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      let resultData = res?.data?.noticeData;
+      resultData.sort((a, b) => b.idx - a.idx);
+      setNoticeData(resultData);
+    } catch (error) {
+      console.error("Error fetching data", error);
+    }
+  };
 
-      reg_dt: "2024.05.12",
-      id: 2000,
-    },
-    {
-      idx: 3,
-      title: "제목이 들어갈 자리입니다.3",
-      reg_dt: "2024.05.12",
-      id: 3000,
-    },
-    {
-      idx: 4,
-      title: "제목이 들어갈 자리입니다.4",
-      reg_dt: "2024.05.12",
-      id: 4000,
-    },
-    {
-      idx: 5,
-      title: "제목이 들어갈 자리입니다.5",
-      reg_dt: "2024.05.12",
-      id: 5000,
-    },
-    {
-      idx: 6,
-      title: "제목이 들어갈 자리입니다.6",
-      reg_dt: "2024.05.12",
-      id: 6000,
-    },
-    {
-      idx: 7,
-      title: "제목이 들어갈 자리입니다.7",
-      reg_dt: "2024.05.12",
-      id: 7000,
-    },
-    {
-      idx: 8,
-      title: "제목이 들어갈 자리입니다.8",
-      reg_dt: "2024.05.12",
-      id: 8000,
-    },
-  ];
-  noticeData.sort((a, b) => b.idx - a.idx);
+  const getFaqData = async () => {
+    try {
+      const res = await axios.get("/dummy/faq.json", {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      });
+      let resultData = res?.data?.faqData;
+
+      setFaqData(resultData);
+    } catch (error) {
+      console.error("Error fetching data", error);
+    }
+  };
+
   //날짜순?
   // new Date(a.reg_dt) - new Date(b.reg_dt)
   let pageData = {
@@ -81,6 +64,12 @@ export default function Support() {
     pageTab: tabList,
     tabIndex: tabIndex,
   };
+  useEffect(() => {
+    getNoticeData();
+    getFaqData();
+    setShowIndex();
+  }, [tabIndex]);
+
   return (
     <div className=" layout" id="support">
       <div style={{ position: "relative" }}>
@@ -107,7 +96,48 @@ export default function Support() {
         </ul>
       </div>
       <div>
-        <BoardList columns={columns} data={noticeData} pageData={pageData} />
+        {tabIndex === 0 ? (
+          <>
+            <p className="menu_title">{tabList[tabIndex].title}</p>
+
+            <BoardList
+              columns={columns}
+              data={noticeData}
+              pageData={pageData}
+            />
+          </>
+        ) : (
+          <div>
+            <p className="menu_title">{tabList[tabIndex].title}</p>
+            <ul className="faq_list_wr">
+              {faqData?.map((row, i) => {
+                return (
+                  <li
+                    className="faq_list"
+                    onClick={() => {
+                      if (showIndex === i) {
+                        setShowIndex();
+                      } else {
+                        setShowIndex(i);
+                      }
+                    }}
+                  >
+                    <p className="q_list flex_start">
+                      <span className="bullet red">Q</span>
+                      <p>{row?.question}</p>
+                    </p>
+                    {showIndex === i ? (
+                      <p className="a_list flex_start flex_top ">
+                        <span className=" bullet red">A</span>
+                        <p>{row?.answer}</p>
+                      </p>
+                    ) : null}
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

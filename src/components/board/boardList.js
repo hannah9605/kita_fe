@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import style from "./boardList.module.css";
+import { useLocation } from "react-router-dom";
+
+import style from "./board.module.css";
 import ListTable from "./listTable";
 import Pagination from "./pagination";
 
@@ -17,6 +19,9 @@ export default function BoardList({ columns, data, pageData }) {
     currentPosts = posts.slice(indexOfFirst, indexOfLast);
     return currentPosts;
   };
+  useEffect(() => {
+    setPosts(data);
+  }, [data]);
 
   return (
     <div className={style.list_table_wr}>
@@ -24,12 +29,16 @@ export default function BoardList({ columns, data, pageData }) {
         posts={currentPosts(posts)}
         columns={columns}
         pageData={pageData}
+        currentPage={currentPage}
+        paginate={setCurrentPage}
+
         // loading={loading}  // 나중에 axios연결
       />
       <Pagination
         postsPerPage={postsPerPage}
         totalPosts={posts?.length}
         paginate={setCurrentPage}
+        currentPage={currentPage}
       ></Pagination>
     </div>
   );

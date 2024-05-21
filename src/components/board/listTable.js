@@ -1,17 +1,31 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import style from "./boardList.module.css";
+import React, { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import style from "./board.module.css";
 
-const ListTable = ({ posts, columns, pageData, loading }) => {
+const ListTable = ({ posts, columns, pageData, currentPage, loading }) => {
+  const location = useLocation();
   const navigate = useNavigate();
+
+  const returnState = location.state;
 
   const getPost = (item, i, _odd) => {
     let oddList = { data: _odd, ...pageData };
     navigate(`/board/${item?.id}`, {
       replace: false,
-      state: { data: item, index: i, odd: oddList },
+      state: {
+        data: item,
+        index: i,
+        odd: oddList,
+        returnState: { currentPage: currentPage ? currentPage : "" },
+      },
     });
   };
+
+  useEffect(() => {
+    if (returnState) {
+      console.log(returnState);
+    }
+  }, [returnState, location]);
 
   return (
     <>

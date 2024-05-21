@@ -1,5 +1,6 @@
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import style from "./boardList.module.css";
+import style from "./board.module.css";
 
 import PageBanner from "../pageBanner";
 
@@ -7,14 +8,21 @@ export default function BoardDetail() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const { data, index, odd } = location.state || {};
+  const { data, index, odd, returnState } = location.state || {};
 
   const getList = (tabIndex) => {
-    navigate(`/Support`, {
-      replace: false,
-      state: { _tabIndex: tabIndex },
-    });
+    // navigate(`/Support`, {
+    //   replace: false,
+    //   state: { _tabIndex: tabIndex },
+    // });
   };
+
+  //뒤로가기시 페이지 = path에서 파람 전달  // => 나중에 개발
+  useEffect(() => {
+    if (returnState) {
+      console.log("Received return state:", returnState);
+    }
+  }, [returnState]);
 
   return (
     <>

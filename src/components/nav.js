@@ -5,7 +5,7 @@ import style from "./nav.module.css";
 // 이미지
 
 const Nav = () => {
-  let loginCheck = window.sessionStorage.getItem("login");
+  let loginCheck = JSON.parse(window.sessionStorage.getItem("login"));
 
   const [searchValue, setSearchValue] = useState("");
   const [isLogin, setIsLogin] = useState(false);
@@ -25,14 +25,25 @@ const Nav = () => {
       setSearchValue(value);
     }
   };
+  const logOut = () => {
+    window.sessionStorage.setItem("login", false);
+    navigate("/", { replace: true });
+  };
+
   useEffect(() => {
-    console.log("로그인변경");
+    console.log("로그인변경", loginCheck);
+    if (loginCheck === false) {
+      setUserMore(false);
+      alert("로그아웃 되었습니다.");
+    } else {
+    }
     setIsLogin(loginCheck);
   }, [loginCheck]);
+  console.log(isLogin);
 
   return (
     <div className="nav flex_center">
-      <div className="flex_between layout ">
+      <div className="flex_between default_box ">
         <ul className={style.nav_menu}>
           <li>
             <Link className="logo" to="/">
@@ -70,7 +81,16 @@ const Nav = () => {
               alt="검색아이콘"
             />
           </div>
-          {isLogin ? (
+          {!isLogin ? (
+            <Link to="/Login" className={style.login_btn}>
+              <img
+                style={{ marginRight: "8px" }}
+                src={"/images/profile.png"}
+                alt="프로필아이콘"
+              />
+              로그인
+            </Link>
+          ) : (
             <div style={{ position: "relative" }} className={style.profile}>
               <button
                 onClick={() => {
@@ -88,15 +108,15 @@ const Nav = () => {
               {userMore && (
                 <ul className={style.user_more_wr}>
                   <li>
-                    <Link to="/myPage">내정보</Link>
+                    <Link to="/Mypage">내정보</Link>
                   </li>
                   <li>
-                    <Link to="/myPage">찜목록</Link>
+                    <Link to="/Bookmark">찜목록</Link>
                   </li>
                   <li>
                     <button
                       onClick={() => {
-                        window.sessionStorage.setItem("login", false);
+                        logOut();
                       }}
                     >
                       <span>로그아웃</span>
@@ -105,15 +125,6 @@ const Nav = () => {
                 </ul>
               )}
             </div>
-          ) : (
-            <Link to="/Login" className={style.login_btn}>
-              <img
-                style={{ marginRight: "8px" }}
-                src={"/images/profile.png"}
-                alt="프로필아이콘"
-              />
-              로그인
-            </Link>
           )}
         </div>
       </div>
