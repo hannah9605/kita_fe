@@ -46,7 +46,14 @@
   margin-bottom: 65px;
 }
 .info_list_wr > li {
-  padding: 35px 0;
+  padding: 20px 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.info_list_wr > li > div {
+  width: 100%;
 }
 .col_tit {
   display: inline-block;
@@ -61,6 +68,8 @@
   font-size: 20px;
   font-weight: 500;
   color: var(--black--);
+  display: inline-block;
+  width: calc(100% - 200px);
 }
 .col_val > b {
   font-weight: 700;

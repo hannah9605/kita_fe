@@ -18,6 +18,9 @@ const Mypage = React.lazy(() => import("./pages/[...afterLogin]/myPage"));
 const BookMark = React.lazy(() => import("./pages/[...afterLogin]/bookmark"));
 
 const BoardDetail = React.lazy(() => import("./components/board/boardDetail"));
+const GalleryDetail = React.lazy(() =>
+  import("./components/board/gallery/galleryDetail")
+);
 
 function App() {
   const path = window.location.pathname;
@@ -37,13 +40,14 @@ function App() {
               <Route exact path="/Support" element={<Support />} />
 
               <Route path="/board/:idx" element={<BoardDetail />} />
+              <Route path="/post/:idx" element={<GalleryDetail />} />
               {/*로그인 전용 */}
               <Route exact path="/Mypage" element={<Mypage />} />
               <Route exact path="/Bookmark" element={<BookMark />} />
             </Routes>
           </Suspense>
         </div>
-        {path === "/Login" ? null : <Footer />}
+        {path === "/Login" || path.includes("/post/") ? null : <Footer />}
       </div>
     </BrowserRouter>
   );

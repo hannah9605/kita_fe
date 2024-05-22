@@ -5,7 +5,7 @@ const PhotoTable = ({ data, loading }) => {
   const navigate = useNavigate();
 
   const getPost = (item, i, _odd) => {
-    navigate(`/board/${item?.id}`, {
+    navigate(`/post/${item?.id}`, {
       replace: false,
       state: { data: item, index: i, odd: _odd },
     });
