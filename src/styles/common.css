@@ -95,6 +95,10 @@
 td.red {
   font-weight: 700;
 }
+.font_16 {
+  font-weight: 600;
+  font-size: 16px;
+}
 /* 버튼 */
 .btn {
   display: flex;
@@ -148,6 +152,10 @@ input[type="text"] {
 }
 .kit_list > *:nth-child(4n) ~ * {
   margin-top: 60px;
+}
+.kit_title,
+.kit_list .thumb_img_wr {
+  cursor: pointer;
 }
 .thumb_img_wr {
   height: 192px;

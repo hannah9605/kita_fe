@@ -14,7 +14,7 @@ export default function KitListPage() {
       id: "12",
     },
     {
-      title: "작품명2",
+      title: "간편한 일러스트 제작 키트",
       auth: "작가2",
       steam: 125,
       view: 382,
@@ -22,7 +22,7 @@ export default function KitListPage() {
       id: "132",
     },
     {
-      title: "작품명3",
+      title: "간편한 일러스트 제작 키트3",
       auth: "작가3",
       steam: 125,
       view: 382,
