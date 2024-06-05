@@ -1,0 +1,15 @@
+{
+  "postDetail": {
+    "title": "작품명",
+    "auth": "닉네임 123",
+    "steam": 125,
+    "view": 382,
+    "thumbnail": "/images/sample.jpg",
+    "id": "12",
+    "individual": true,
+    "nonCommercial": true,
+    "commerce": true,
+    "modify": false,
+    "guide": "Instagram : User_ID\n\n사용 시 반드시 출처를 표기해 주세요.\n금지 사항 : 상업적 이용 / 트레이싱 / 리터칭 / 가공 / 유튜브 / 스트리밍\n문의나 신고는 인스타그램 DM으로 부탁드립니다.\n\nPlease be sure to indicate the source when using it.\nBanned: Commercial use / tracing / retouching / processing / YouTube / streaming\nFor inquiries or reports, please send us an Instagram DM."
+  }
+}

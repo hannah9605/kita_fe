@@ -42,7 +42,14 @@ const PhotoTable = ({ data, loading }) => {
                   )}
                 </button>
               </div>
-              <p className="kit_title">{item?.title}</p>
+              <p
+                onClick={() => {
+                  getPost(item, i, data);
+                }}
+                className="kit_title"
+              >
+                {item?.title}
+              </p>
               <p className="kit_auth">{item?.auth}</p>
               <div>
                 <span className="bookmark_num">{item?.steam}</span>
