@@ -48,8 +48,8 @@ export default function GalleryDetail() {
                   <br /> 문의나 신고는 인스타그램 DM으로 부탁드립니다.
                   <br />
                   <br /> Please be sure to indicate the source when using
-                  it. Banned: Commercial use / tracing / retouching / processing
-                  / YouTube / streaming For inquiries or reports, please send us
+                  it.Banned: Commercial use / tracing / retouching / processing
+                  / YouTube / streamingFor inquiries or reports, please send us
                   an Instagram DM.
                 </p>
               </div>
