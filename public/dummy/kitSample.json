@@ -1,0 +1,158 @@
+{
+  "KitAssemble": {
+    "itemKit": [
+      {
+        "title": "피부색",
+        "source": "/images/kitExample/itemKit/피부색.png",
+        "itemList": [
+          {
+            "title": "피부색1",
+            "source": "/images/kitExample/item/피부색1.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/viewImage/tone/피부색1_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "옆머리",
+        "source": "/images/kitExample/itemKit/옆머리.png",
+        "itemList": [
+          {
+            "title": "옆머리1",
+            "source": "/images/kitExample/item/옆머리1.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/viewImage/sideHair/옆머리1_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/viewImage/sideHair/옆머리1_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/sideHair/옆머리1_03.png"
+              }
+            ]
+          },
+          {
+            "title": "옆머리2",
+            "source": "/images/kitExample/item/옆머리2.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/viewImage/tone/피부색1_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
+              }
+            ]
+          },
+          {
+            "title": "옆머리3",
+            "source": "/images/kitExample/item/옆머리3.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/viewImage/tone/피부색1_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "title": "앞머리",
+        "source": "/images/kitExample/itemKit/앞머리.png",
+        "itemList": [
+          {
+            "title": "앞머리1",
+            "source": "/images/kitExample/item/앞머리1.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/viewImage/frontHair/앞머리1_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/viewImage/frontHair/앞머리1_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/frontHair/앞머리1_03.png"
+              }
+            ]
+          },
+          {
+            "title": "앞머리2",
+            "source": "/images/kitExample/item/앞머리2.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/frontHair/앞머리2_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/frontHair/앞머리2_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/frontHair/앞머리2_03.png"
+              }
+            ]
+          }
+        ]
+      },
+
+      {
+        "title": "피부색",
+        "source": "/images/kitExample/itemKit/피부색.png",
+        "itemList": [
+          {
+            "title": "피부색1",
+            "source": "/images/kitExample/item/피부색1.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/viewImage/tone/피부색1_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
