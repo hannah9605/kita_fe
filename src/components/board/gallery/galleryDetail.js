@@ -102,38 +102,6 @@ export default function GalleryDetail() {
                 </button>
               </div>
             </li>
-<<<<<<< HEAD
-            <li className="">
-              <div className="flex_start">
-                <span>KIT : Guide</span>
-                <span>유의사항</span>
-              </div>
-              <div>
-                <p>
-                  Instagram : User_ID <br />
-                  사용 시 반드시 출처를 표기해 주세요.
-                  <br /> 금지 사항 : 상업적 이용 / 트레이싱 / 리터칭 / 가공 /
-                  유튜브 / 스트리밍
-                  <br /> 문의나 신고는 인스타그램 DM으로 부탁드립니다.
-                  <br />
-                  <br /> Please be sure to indicate the source when using
-                  it.Banned: Commercial use / tracing / retouching / processing
-                  / YouTube / streamingFor inquiries or reports, please send us
-                  an Instagram DM.
-                </p>
-              </div>
-            </li>
-            <li>
-              <span> 허용범위</span>
-              <span> 개인적 사용</span>
-              <span> 비상업적 사용</span>
-              <span> 상업적 사용</span>
-              <span> 수정 사용</span>
-            </li>
-            <li className="flex_center">
-              <button>조립하기</button>
-            </li>
-=======
             {stepIndex === 0 ? (
               <>
                 <li>
@@ -176,7 +144,6 @@ export default function GalleryDetail() {
                 </li>
               </>
             ) : null}
->>>>>>> ed99cbe13b0ea7be6e7655e200f79de8fc23de46
           </ul>
         </div>
       </div>
