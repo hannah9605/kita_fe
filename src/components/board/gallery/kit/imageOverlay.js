@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import style from "../gallery.module.css";
 
 // src를 파일형태로 변환
 const fetchImageAsFile = async (url, filename) => {
@@ -8,7 +9,7 @@ const fetchImageAsFile = async (url, filename) => {
   return file;
 };
 
-const ImageOverlay = ({ selectItem }) => {
+const ImageOverlay = ({ detailData, selectItem, setStepIndex, stepIndex }) => {
   // 상태 변수
   const [image1Preview, setImage1Preview] = useState(null);
   const [image2Preview, setImage2Preview] = useState(null);
@@ -43,14 +44,14 @@ const ImageOverlay = ({ selectItem }) => {
 
         for (const item of selectItem) {
           const img = new Image();
-          img.src = item;
+          img.src = item?.src;
 
           await new Promise((resolve) => {
             img.onload = () => {
               if (!firstImageLoaded) {
                 // 캔버스 크기를 첫 번째 이미지 크기로 설정
-                canvas.width = img.width;
-                canvas.height = img.height;
+                canvas.width = 850;
+                canvas.height = 630;
                 firstImageLoaded = true;
               }
               ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
@@ -81,18 +82,54 @@ const ImageOverlay = ({ selectItem }) => {
 
   return (
     <div>
-      <h2>Upload and Merge Images</h2>
+      {stepIndex === 2 ? (
+        <div className={style.complete_head}>
+          <p className="logo">
+            KIT<span>:A</span>
+          </p>
+          <p className={style.auth_font}>{detailData?.auth}</p>
+        </div>
+      ) : null}
       <canvas
         ref={canvasRef}
         style={{
-          border: "1px solid black",
           display: "block",
-          marginTop: "20px",
         }}
       />
-      <button onClick={handleMergeImages} style={{ marginTop: "20px" }}>
-        Merge Images and Download
-      </button>
+      {stepIndex === 2 ? (
+        <>
+          <div className="flex_start font_16">
+            <div className={style.profile_wr}>
+              <img src="/images/profile.png" alt="" />
+            </div>
+            {detailData?.auth}
+          </div>
+          <button
+            className="btn_red"
+            onClick={handleMergeImages}
+            style={{ marginTop: "20px" }}
+          >
+            이미지 다운로드
+          </button>
+          <p>KIT 조립이 완료되었습니다</p>
+          <div>
+            <button
+              onClick={() => {
+                setStepIndex(0);
+              }}
+            >
+              다시 조립하러가기
+            </button>
+            <button
+              onClick={() => {
+                setStepIndex(stepIndex - 1);
+              }}
+            >
+              수정하기
+            </button>
+          </div>
+        </>
+      ) : null}
     </div>
   );
 };

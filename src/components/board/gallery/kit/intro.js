@@ -97,7 +97,7 @@ export default function Intro({ detailData, setStepIndex }) {
           {renderArrowArea(detailData)}
         </li>
 
-        <li className="flex_center">
+        <li className={style.assemble_btn}>
           <button
             onClick={() => {
               setStepIndex(1);

@@ -20,6 +20,34 @@
               {
                 "color": "red",
                 "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
+              },
+              {
+                "color": "#ddd",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#aaa",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#eee",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
+              },
+              {
+                "color": "#ddd",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#aaa",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#eee",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
               }
             ]
           }
@@ -50,6 +78,60 @@
           {
             "title": "옆머리2",
             "source": "/images/kitExample/item/옆머리2.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/viewImage/tone/피부색1_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
+              }
+            ]
+          },
+          {
+            "title": "옆머리3",
+            "source": "/images/kitExample/item/옆머리3.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/viewImage/tone/피부색1_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
+              }
+            ]
+          },
+          {
+            "title": "옆머리3",
+            "source": "/images/kitExample/item/옆머리3.png",
+            "type": [
+              {
+                "color": "#ccc",
+                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
+              },
+              {
+                "color": "#385364",
+                "source": "/images/kitExample/viewImage/tone/피부색1_02.png"
+              },
+              {
+                "color": "red",
+                "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
+              }
+            ]
+          },
+          {
+            "title": "옆머리3",
+            "source": "/images/kitExample/item/옆머리3.png",
             "type": [
               {
                 "color": "#ccc",
@@ -123,31 +205,6 @@
               {
                 "color": "red",
                 "source": "/images/kitExample/frontHair/앞머리2_03.png"
-              }
-            ]
-          }
-        ]
-      },
-
-      {
-        "title": "피부색",
-        "source": "/images/kitExample/itemKit/피부색.png",
-        "itemList": [
-          {
-            "title": "피부색1",
-            "source": "/images/kitExample/item/피부색1.png",
-            "type": [
-              {
-                "color": "#ccc",
-                "source": "/images/kitExample/viewImage/tone/피부색1_01.png"
-              },
-              {
-                "color": "#385364",
-                "source": "/images/kitExample/viewImage/tone/피부색1_02.png"
-              },
-              {
-                "color": "red",
-                "source": "/images/kitExample/viewImage/tone/피부색1_03.png"
               }
             ]
           }

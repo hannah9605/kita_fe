@@ -28,9 +28,11 @@
   justify-content: center;
 }
 .content_wr {
-  background: #e4e8ee;
-  width: 850px;
-  height: 630px;
+  background: #fff;
+  width: auto;
+  height: auto;
+  /* width: 850px;
+  height: 630px; */
 }
 /* side_bar start */
 .side_bar_wr {
@@ -43,7 +45,6 @@
   background: #fff;
   border-radius: 0 0 0 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  padding: 35px 30px 28px 30px;
 }
 
 .logo {
@@ -54,24 +55,49 @@
 .logo span {
   color: var(--coolgray01--);
 }
-/* intro */
+/* intro  start*/
+
 .intro_wr {
-  height: 100%;
+  padding: 35px 0 0;
 }
-.side_bar_wr .intro_wr {
+.intro_wr,
+.assemble_wr {
   display: flex;
+  height: 100%;
   flex-direction: column;
   flex-grow: 1;
 }
 .intro_wr li {
+  margin: 0 30px;
+}
+.intro_wr li,
+.assemble_wr > * {
   flex-shrink: 0; /* 이 요소들은 필요한 공간만 차지하고 나머지 공간을 줄이지 않음 */
 }
-.intro_wr .intro_con {
+.intro_wr .intro_con,
+.kit_content {
   flex-grow: 1; /* 이 요소가 남은 공간을 모두 차지 */
 }
 .intro_wr li ~ li {
   padding: 25px 0;
   border-top: 1px solid var(--coolgray01--);
+}
+.area_wr {
+  border-top: none !important;
+}
+.assemble_btn {
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--coolgray01--);
+
+  padding: 28px 0;
+}
+.assemble_btn button {
+  color: var(--mainRed--);
+  font-weight: 700;
+  font-size: 24px;
 }
 .obj_tit_wr {
   padding-bottom: 25px;
@@ -152,4 +178,96 @@
 }
 .area_act_item {
   background: red;
+}
+/* intro  end*/
+
+/* 조립하기 */
+/* .assemble_wr > * {
+  padding: 22px 30px 22px 25px;
+} */
+.assemble_wr h4 {
+  font-size: 13px;
+  font-weight: 800;
+  color: #717e93;
+  margin-bottom: 10px;
+}
+.assemble_wr > * {
+  width: 100%;
+}
+/* 각 파츠 아이템 */
+.type_item,
+.kit_content_item,
+.kit_item {
+  border-radius: 10px;
+  border: 1px solid #d7dce4;
+  overflow: hidden;
+  cursor: pointer;
+}
+.type_content {
+  background: #f7f8f9;
+  overflow-x: auto;
+  padding: 22px 25px 0;
+  height: 120px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.type_list_wr {
+  overflow-x: auto;
+}
+.type_list_wr ul {
+  width: fit-content;
+}
+.type_item {
+  width: 42px;
+  height: 42px;
+}
+.type_item ~ .type_item {
+  margin-left: 15px;
+}
+
+.kit_content {
+  padding: 22px 20px 22px 25px;
+}
+.kit_content_item {
+  width: 75px;
+  height: 75px;
+}
+.kit_content_item ~ .kit_content_item {
+  margin-top: 10px;
+}
+.kit_item_content_wr {
+  width: 380px;
+  padding: 22px 30px;
+}
+.kit_item_content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.kit_item {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+.kit_item:nth-child(3) ~ .kit_item {
+  margin-top: 10px;
+}
+.kit_item:nth-child(3n) {
+  margin-right: 0;
+}
+
+/* 완성하기 */
+.complete_head {
+  padding: 14px 28px 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.auth_font {
+  font-size: 16px;
+  color: #adadad;
+  font-weight: 600;
 }

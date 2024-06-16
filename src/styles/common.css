@@ -26,6 +26,7 @@
 .flex_col {
   flex-direction: column;
 }
+
 /* layout */
 
 .layout {
@@ -67,7 +68,14 @@
   top: 0;
   left: 0;
 }
-
+/* thema */
+.dark {
+  background: #292929;
+}
+.nav_work {
+  width: 100%;
+  height: 100%;
+}
 /* font_style */
 .bn_subtitle {
   font-size: 20px;
@@ -121,6 +129,16 @@ td.red {
   color: var(--mainRed--);
   font-size: 20px;
   font-weight: 700;
+}
+.btn_red {
+  color: #fff;
+  background: var(--mainRed--);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  font-weight: 700;
+
+  font-size: 18px;
+  padding: 20px;
+  width: 100%;
 }
 .btn_box button ~ button {
   margin-left: 15px;

@@ -16,6 +16,7 @@ const Support = React.lazy(() => import("./pages/support"));
 
 const Mypage = React.lazy(() => import("./pages/[...afterLogin]/myPage"));
 const BookMark = React.lazy(() => import("./pages/[...afterLogin]/bookmark"));
+const WorkSpace = React.lazy(() => import("./pages/[...afterLogin]/workspace"));
 
 const BoardDetail = React.lazy(() => import("./components/board/boardDetail"));
 const GalleryDetail = React.lazy(() =>
@@ -24,7 +25,6 @@ const GalleryDetail = React.lazy(() =>
 
 function App() {
   const path = window.location.pathname;
-  console.log(path);
   return (
     <BrowserRouter>
       <div className="App">
@@ -44,6 +44,7 @@ function App() {
               {/*로그인 전용 */}
               <Route exact path="/Mypage" element={<Mypage />} />
               <Route exact path="/Bookmark" element={<BookMark />} />
+              <Route exact path="/workspace" element={<WorkSpace />} />
             </Routes>
           </Suspense>
         </div>

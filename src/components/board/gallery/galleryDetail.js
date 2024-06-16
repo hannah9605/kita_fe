@@ -58,8 +58,8 @@ export default function GalleryDetail() {
   return (
     <>
       <div className={style.gallery_wr} id="">
-        <div className={style.head}>
-          {stepIndex === 0 ? (
+        {stepIndex === 0 ? (
+          <div className={style.head}>
             <Link to={"/KitList"}>
               <img
                 style={{ marginRight: "25px" }}
@@ -68,7 +68,9 @@ export default function GalleryDetail() {
               />
               KIT: 리스트
             </Link>
-          ) : (
+          </div>
+        ) : stepIndex === 2 ? null : (
+          <div className={style.head}>
             <div
               onClick={() => {
                 setStepIndex(stepIndex - 1);
@@ -81,21 +83,31 @@ export default function GalleryDetail() {
               />
               KIT: 리스트
             </div>
-          )}
-        </div>
-        <div className={style.gallery_box}>
+          </div>
+        )}
+        <div
+          style={stepIndex === 2 ? { width: "100%" } : null}
+          className={style.gallery_box}
+        >
           <div className={style.content_wr}>
             {stepIndex === 0 ? (
               <img src={"/images/kitExample/kitSampleImage.png"} />
             ) : (
-              <ImageOverlay selectItem={selectItem} />
+              <ImageOverlay
+                detailData={detailData}
+                selectItem={selectItem}
+                setStepIndex={setStepIndex}
+                stepIndex={stepIndex}
+              />
             )}
           </div>
         </div>
-        <div className={style.side_bar_wr}>
-          {stepIndex === 0 ? (
+        {stepIndex === 0 ? (
+          <div className={style.side_bar_wr}>
             <Intro detailData={detailData} setStepIndex={setStepIndex} />
-          ) : stepIndex === 1 ? (
+          </div>
+        ) : stepIndex === 1 ? (
+          <div className={style.side_bar_wr}>
             <Assemble
               detailData={detailData}
               setStepIndex={setStepIndex}
@@ -103,8 +115,8 @@ export default function GalleryDetail() {
               setSelectItem={setSelectItem}
               selectItem={selectItem}
             ></Assemble>
-          ) : null}
-        </div>
+          </div>
+        ) : null}
       </div>
     </>
   );
