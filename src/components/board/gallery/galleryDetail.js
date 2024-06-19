@@ -69,7 +69,7 @@ export default function GalleryDetail() {
               KIT: 리스트
             </Link>
           </div>
-        ) : stepIndex === 2 ? null : (
+        ) : stepIndex === 1 ? (
           <div className={style.head}>
             <div
               onClick={() => {
@@ -81,10 +81,10 @@ export default function GalleryDetail() {
                 src="/images/arrow_index.png"
                 alt=""
               />
-              KIT: 리스트
+              KIT: 소개
             </div>
           </div>
-        )}
+        ) : null}
         <div
           style={stepIndex === 2 ? { width: "100%" } : null}
           className={style.gallery_box}

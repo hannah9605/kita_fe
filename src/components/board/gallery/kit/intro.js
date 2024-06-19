@@ -23,6 +23,7 @@ export default function Intro({ detailData, setStepIndex }) {
               }
               key={area?.key}
             >
+              <img src="/images/available.png" alt="" />
               {area?.title}
             </span>
           ))}
