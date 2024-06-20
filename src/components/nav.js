@@ -32,6 +32,7 @@ const Nav = () => {
   };
 
   const loginCheckPage = () => {
+    console.log("isLogin", isLogin);
     if (!isLogin) {
       alert("로그인 후 이용해주세요.");
       navigate("/login", { replace: true });
@@ -47,6 +48,12 @@ const Nav = () => {
     }
     setIsLogin(loginCheck);
   }, [loginCheck]);
+
+  useEffect(() => {
+    if (!isLogin && path.includes("/workspace")) {
+      loginCheckPage();
+    }
+  }, [isLogin, path]);
 
   return (
     <div className="nav flex_center">
@@ -100,9 +107,7 @@ const Nav = () => {
                 <button className="btn_red">홈페이지</button>
               </div>
             </div>
-          ) : (
-            loginCheckPage()
-          )}
+          ) : null}
         </div>
       ) : (
         <div className="flex_between default_box ">
