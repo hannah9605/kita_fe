@@ -5,6 +5,7 @@ import axios from "axios";
 export default function Intro({ detailData, setStepIndex }) {
   const [tabIndex, setTabIndex] = useState(0);
 
+  // 허용범위 렌더링
   const renderArrowArea = (_data) => {
     if (_data) {
       const arrowArea = [
@@ -23,7 +24,15 @@ export default function Intro({ detailData, setStepIndex }) {
               }
               key={area?.key}
             >
-              <img src="/images/available.png" alt="" />
+              <img
+                style={{ marginRight: "2px" }}
+                src={
+                  !detailData[area?.key]
+                    ? "/images/not_available.png"
+                    : "/images/available.png"
+                }
+                alt=""
+              />
               {area?.title}
             </span>
           ))}
@@ -31,6 +40,8 @@ export default function Intro({ detailData, setStepIndex }) {
       );
     }
   };
+
+  // intro
 
   return (
     <>

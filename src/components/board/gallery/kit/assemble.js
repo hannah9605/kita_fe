@@ -12,15 +12,21 @@ export default function Assemble({
   let itemKit = kitItemData?.itemKit;
   const [itemKitIndex, setItemKitIndex] = useState(0);
   const [itemIndex, setItemIndex] = useState(0);
+  const [itemList, setItemList] = useState();
+  const [itemType, setItemType] = useState();
 
-  let itemList = itemKit[itemKitIndex]?.itemList;
-  let itemType = itemList[itemIndex]?.type;
+  if (itemKit?.lenght > 0) {
+  }
 
   const getImageOverlay = () => {
     let init = [];
-    itemKit.map((item) => {
+    itemKit?.map((item) => {
       console.log(item, "inite");
-      let temp = { id: item?.title, src: item?.itemList[0]?.type[0]?.source };
+      let temp = {
+        id: item?.title,
+        group: item?.itemList[0]?.title,
+        src: item?.itemList[0]?.type[0]?.source,
+      };
       init.push(temp);
     });
     setSelectItem(init);
@@ -36,6 +42,8 @@ export default function Assemble({
         return rowItem;
       });
       setSelectItem(changeSelectItem);
+      let test = selectItem.filter((item) => item.src === _type.source);
+      console.log(test);
       console.log(itemKit[itemKitIndex], "??", _type, changeSelectItem);
     }
   };
@@ -43,6 +51,18 @@ export default function Assemble({
   useEffect(() => {
     getImageOverlay();
   }, []);
+
+  useEffect(() => {
+    if (itemKit.lenght > 0) {
+      setItemList(itemKit[itemKitIndex]?.itemList);
+    }
+  }, [itemKitIndex]);
+  useEffect(() => {
+    if (itemKit.lenght > 0) {
+      setItemType(itemList[itemIndex]?.type);
+    }
+  }, [itemIndex]);
+
   return (
     <div className={style.assemble_wr}>
       <div className={style.type_content}>
@@ -52,7 +72,11 @@ export default function Assemble({
             {itemType?.map((type, index) => {
               return (
                 <li
-                  className={style.type_item}
+                  className={
+                    selectItem.some((item) => item.src === type.source)
+                      ? `${style.type_item} ${style.act_item}`
+                      : style.type_item
+                  }
                   style={{
                     background: `${type?.color}`,
                   }}
@@ -71,9 +95,33 @@ export default function Assemble({
           {itemKit?.map((kit, i) => {
             return (
               <div
-                className={style.kit_content_item}
+                key={i}
+                className={
+                  itemKitIndex === i
+                    ? `${style.kit_content_item} ${style.act_item}`
+                    : style.kit_content_item
+                }
                 onClick={() => {
                   setItemKitIndex(i);
+                  // selectItem
+                  // 선택된 아이템 정보 불러오기
+
+                  let itemListTemp = itemKit[i]?.itemList;
+                  selectItem?.map((select) => {
+                    let selected = itemListTemp.some((item, index) => {
+                      if (item?.title === select?.group) {
+                        console.log("일치", item, select);
+                        setItemIndex(index);
+                      }
+                    });
+                    console.log(selected);
+                  });
+
+                  // itemListTemp.some((item) => item?.itemList?.map((item) => {
+                  //   item?.=== type.source
+                  // }) );
+
+                  console.log(itemKitIndex, itemList);
                 }}
               >
                 <img src={kit?.source} />
@@ -88,9 +136,14 @@ export default function Assemble({
             {itemList?.map((row, index) => {
               return (
                 <div
-                  className={style.kit_item}
+                  className={
+                    itemIndex === index
+                      ? `${style.kit_item} ${style.act_item}`
+                      : style.kit_item
+                  }
                   onClick={() => {
                     setItemIndex(index);
+                    changeImageSrc(itemList[index]?.type[0]);
                   }}
                 >
                   <img src={row?.source} />
