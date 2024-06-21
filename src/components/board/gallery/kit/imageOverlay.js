@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+
 import style from "../gallery.module.css";
 
 // src를 파일형태로 변환
@@ -81,39 +83,46 @@ const ImageOverlay = ({ detailData, selectItem, setStepIndex, stepIndex }) => {
   };
 
   return (
-    <div>
-      {stepIndex === 2 ? (
-        <div className={style.complete_head}>
-          <p className="logo">
-            KIT<span>:A</span>
-          </p>
-          <p className={style.auth_font}>{detailData?.auth}</p>
-        </div>
-      ) : null}
-      <canvas
-        ref={canvasRef}
-        style={{
-          display: "block",
-        }}
-      />
+    <div className={style.complete_wrapper}>
+      <div className={style.content_wr}>
+        {stepIndex === 2 ? (
+          <div className={style.complete_head}>
+            <p className="logo">
+              KIT<span>:A</span>
+            </p>
+            <p className={style.auth_font}>@{detailData?.auth}</p>
+          </div>
+        ) : null}
+        <canvas
+          ref={canvasRef}
+          style={{
+            display: "block",
+          }}
+        />
+        {stepIndex === 2 ? (
+          <>
+            <div
+              style={{ background: "#F7F8F9", padding: "15px 20px" }}
+              className="flex_start font_16"
+            >
+              <div className={style.profile_wr}>
+                <img src="/images/profile.png" alt="" />
+              </div>
+              {detailData?.auth}
+            </div>
+            <button className="btn_red" onClick={handleMergeImages}>
+              이미지 다운로드
+            </button>
+          </>
+        ) : null}
+      </div>
       {stepIndex === 2 ? (
         <>
-          <div className="flex_start font_16">
-            <div className={style.profile_wr}>
-              <img src="/images/profile.png" alt="" />
-            </div>
-            {detailData?.auth}
-          </div>
-          <button
-            className="btn_red"
-            onClick={handleMergeImages}
-            style={{ marginTop: "20px" }}
-          >
-            이미지 다운로드
-          </button>
-          <p>KIT 조립이 완료되었습니다</p>
-          <div>
+          {" "}
+          <p className={style.complete_font}>KIT 조립이 완료되었습니다</p>
+          <div className={style.reply_btn_wr}>
             <button
+              className="btn_default"
               onClick={() => {
                 setStepIndex(0);
               }}
@@ -121,12 +130,23 @@ const ImageOverlay = ({ detailData, selectItem, setStepIndex, stepIndex }) => {
               다시 조립하러가기
             </button>
             <button
+              className="btn_secondary"
               onClick={() => {
                 setStepIndex(stepIndex - 1);
               }}
             >
               수정하기
             </button>
+          </div>
+          <div className="btn_default">
+            <Link
+              to={"/KitList"}
+              onClick={() => {
+                setStepIndex(stepIndex - 1);
+              }}
+            >
+              목록으로
+            </Link>
           </div>
         </>
       ) : null}

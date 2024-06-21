@@ -57,7 +57,14 @@ export default function GalleryDetail() {
 
   return (
     <>
-      <div className={style.gallery_wr} id="">
+      <div
+        className={
+          stepIndex === 2
+            ? `${style.gallery_wr} ${style.complete_bg}`
+            : style.gallery_wr
+        }
+        id=""
+      >
         {stepIndex === 0 ? (
           <div className={style.head}>
             <Link to={"/KitList"}>
@@ -89,18 +96,18 @@ export default function GalleryDetail() {
           style={stepIndex === 2 ? { width: "100%" } : null}
           className={style.gallery_box}
         >
-          <div className={style.content_wr}>
-            {stepIndex === 0 ? (
+          {stepIndex === 0 ? (
+            <div className={style.content_wr}>
               <img src={"/images/kitExample/kitSampleImage.png"} />
-            ) : (
-              <ImageOverlay
-                detailData={detailData}
-                selectItem={selectItem}
-                setStepIndex={setStepIndex}
-                stepIndex={stepIndex}
-              />
-            )}
-          </div>
+            </div>
+          ) : (
+            <ImageOverlay
+              detailData={detailData}
+              selectItem={selectItem}
+              setStepIndex={setStepIndex}
+              stepIndex={stepIndex}
+            />
+          )}
         </div>
         {stepIndex === 0 ? (
           <div className={style.side_bar_wr}>

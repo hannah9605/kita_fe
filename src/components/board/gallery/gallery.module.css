@@ -1,7 +1,22 @@
 .gallery_wr {
-  background: var(--coolgray02--);
+  background: #fff;
   height: calc(100vh - 80px);
   position: relative;
+}
+.gallery_wr::before {
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--coolgray02--);
+}
+.complete_bg::before {
+  height: 42.4%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .head {
@@ -300,14 +315,35 @@
   border-radius: 6px;
 }
 /* 완성하기 */
+.complete_wrapper .content_wr {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
 .complete_head {
   padding: 14px 28px 14px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid red;
 }
 .auth_font {
   font-size: 16px;
   color: #adadad;
   font-weight: 600;
+}
+.complete_font {
+  font-family: esamanru;
+  font-size: 20px;
+  font-weight: 700;
+  color: #dbdbdb;
+  padding: 10px 0 36px;
+}
+.reply_btn_wr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.reply_btn_wr > * {
+  width: 50%;
 }

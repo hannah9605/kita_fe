@@ -9,14 +9,14 @@ export default function Assemble({
   setSelectItem,
   selectItem,
 }) {
-  let itemKit = kitItemData?.itemKit;
   const [itemKitIndex, setItemKitIndex] = useState(0);
   const [itemIndex, setItemIndex] = useState(0);
-  const [itemList, setItemList] = useState();
-  const [itemType, setItemType] = useState();
+  // const [itemList, setItemList] = useState();
+  // const [itemType, setItemType] = useState();
 
-  if (itemKit?.lenght > 0) {
-  }
+  let itemKit = kitItemData?.itemKit || [];
+  let itemList = itemKit[itemKitIndex]?.itemList || [];
+  let itemType = itemList[itemIndex]?.type || [];
 
   const getImageOverlay = () => {
     let init = [];
@@ -37,14 +37,14 @@ export default function Assemble({
       const changeSelectItem = [...selectItem];
       changeSelectItem?.map((rowItem) => {
         if (rowItem?.id === itemKit[itemKitIndex]?.title) {
-          return (rowItem.src = _type?.source);
+          rowItem.src = _type?.source;
+          rowItem.group = itemList[itemIndex]?.title;
+          return rowItem;
         }
         return rowItem;
       });
       setSelectItem(changeSelectItem);
-      let test = selectItem.filter((item) => item.src === _type.source);
-      console.log(test);
-      console.log(itemKit[itemKitIndex], "??", _type, changeSelectItem);
+      console.log(changeSelectItem, itemList);
     }
   };
   // 초기 이미지 로드
@@ -52,16 +52,16 @@ export default function Assemble({
     getImageOverlay();
   }, []);
 
-  useEffect(() => {
-    if (itemKit.lenght > 0) {
-      setItemList(itemKit[itemKitIndex]?.itemList);
-    }
-  }, [itemKitIndex]);
-  useEffect(() => {
-    if (itemKit.lenght > 0) {
-      setItemType(itemList[itemIndex]?.type);
-    }
-  }, [itemIndex]);
+  // useEffect(() => {
+  //   if (itemKit.lenght > 0) {
+  //     setItemList(itemKit[itemKitIndex]?.itemList);
+  //   }
+  // }, [itemKitIndex]);
+  // useEffect(() => {
+  //   if (itemKit.lenght > 0) {
+  //     setItemType(itemList[itemIndex]?.type);
+  //   }
+  // }, [itemIndex]);
 
   return (
     <div className={style.assemble_wr}>
@@ -109,12 +109,13 @@ export default function Assemble({
                   let itemListTemp = itemKit[i]?.itemList;
                   selectItem?.map((select) => {
                     let selected = itemListTemp.some((item, index) => {
+                      console.log(item, select, "dd");
+
                       if (item?.title === select?.group) {
                         console.log("일치", item, select);
                         setItemIndex(index);
                       }
                     });
-                    console.log(selected);
                   });
 
                   // itemListTemp.some((item) => item?.itemList?.map((item) => {
