@@ -17,6 +17,9 @@ const Support = React.lazy(() => import("./pages/support"));
 const Mypage = React.lazy(() => import("./pages/[...afterLogin]/myPage"));
 const BookMark = React.lazy(() => import("./pages/[...afterLogin]/bookmark"));
 const WorkSpace = React.lazy(() => import("./pages/[...afterLogin]/workspace"));
+const KitInsert = React.lazy(() =>
+  import("./pages/[...afterLogin]/workspace/kitMaker/kitInsert")
+);
 
 const BoardDetail = React.lazy(() => import("./components/board/boardDetail"));
 const GalleryDetail = React.lazy(() =>
@@ -34,7 +37,6 @@ function App() {
   useEffect(() => {
     console.log(location);
     if (location.pathname.includes("/workspace")) {
-      alert("다크모드");
       setBackgroundStyle({ mode: "dark" });
     } else {
       setBackgroundStyle({ mode: "normal" });
@@ -60,6 +62,7 @@ function App() {
             <Route exact path="/Mypage" element={<Mypage />} />
             <Route exact path="/Bookmark" element={<BookMark />} />
             <Route exact path="/workspace" element={<WorkSpace />} />
+            <Route exact path="/workspace/insert" element={<KitInsert />} />
           </Routes>
         </Suspense>
       </div>

@@ -24,3 +24,47 @@ button {
   justify-content: center;
   margin-left: 24px;
 }
+
+.location_wr {
+  background: #161616;
+  padding: 20px 0;
+}
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.lo_page {
+  font-size: 16px;
+  font-weight: 600;
+}
+.lo_page svg {
+  margin-right: 25px;
+}
+.lo_log {
+  margin-left: 44px;
+  font-size: 14px;
+  font-weight: 400;
+}
+.lo_log svg {
+  margin: 0 14px;
+}
+.reg_img_wr {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.default_image {
+  background: "#454545";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img_btn {
+  background: #161616;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
