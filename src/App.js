@@ -28,20 +28,21 @@ function App() {
 
   const location = useLocation();
   const [backgroundStyle, setBackgroundStyle] = useState({
-    background: "#fff",
+    mode: "normal",
   });
 
   useEffect(() => {
     console.log(location);
     if (location.pathname.includes("/workspace")) {
-      setBackgroundStyle({ background: "#292929" });
+      alert("다크모드");
+      setBackgroundStyle({ mode: "dark" });
     } else {
-      setBackgroundStyle({ background: "#fff" });
+      setBackgroundStyle({ mode: "normal" });
     }
   }, [location.pathname]);
 
   return (
-    <div style={{ background: backgroundStyle }} className="App">
+    <div className={backgroundStyle?.mode === "dark" ? "App dark" : "App"}>
       <Nav />
       <div>
         <Suspense fallback={<div>Loading...</div>}>

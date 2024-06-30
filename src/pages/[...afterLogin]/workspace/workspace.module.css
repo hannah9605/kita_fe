@@ -1,0 +1,26 @@
+.guide_btn {
+  background: #161616;
+  padding: 18px 23px 18px 30px;
+  border-radius: 10px;
+  border: 1px solid #f02941;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+.guide_btn p,
+button {
+  color: #fff;
+  font-weight: 600;
+}
+.arrow_btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 24px;
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const PhotoTable = ({ data, loading }) => {
+const PhotoTable = ({ data, mode }) => {
   const navigate = useNavigate();
 
   const getPost = (item, i, _odd) => {
@@ -13,11 +13,13 @@ const PhotoTable = ({ data, loading }) => {
 
   return (
     <>
-      {/* {loading && <div> loading... </div>} */}
-      <ul className="flex_between kit_list">
+      <ul className={mode === "dark" ? "kit_list " : "flex_between kit_list"}>
         {data?.map((item, i) => {
           return (
-            <li key={`${item.id}`}>
+            <li
+              className={mode === "dark" ? " kit_list_item" : null}
+              key={`${item.id}`}
+            >
               <div style={{ position: "relative" }}>
                 <div
                   className="thumb_img_wr"
@@ -42,18 +44,22 @@ const PhotoTable = ({ data, loading }) => {
                   )}
                 </button>
               </div>
-              <p
-                onClick={() => {
-                  getPost(item, i, data);
-                }}
-                className="kit_title"
-              >
-                {item?.title}
-              </p>
-              <p className="kit_auth">{item?.auth}</p>
-              <div>
-                <span className="bookmark_num">{item?.steam}</span>
-                <span className="view_num">{item?.view}</span>
+              <div className={mode === "dark" ? "kit_info" : null}>
+                <div>
+                  <p
+                    onClick={() => {
+                      getPost(item, i, data);
+                    }}
+                    className="kit_title"
+                  >
+                    {item?.title}
+                  </p>
+                  <p className="kit_auth">{item?.auth}</p>
+                </div>
+                <div>
+                  <span className="bookmark_num">{item?.steam}</span>
+                  <span className="view_num">{item?.view}</span>
+                </div>
               </div>
             </li>
           );

@@ -68,14 +68,7 @@
   top: 0;
   left: 0;
 }
-/* thema */
-.dark {
-  background: #292929;
-}
-.nav_work {
-  width: 100%;
-  height: 100%;
-}
+
 /* font_style */
 .bn_subtitle {
   font-size: 20px;
@@ -366,4 +359,76 @@ input[type="text"] {
 .faq_list .a_list {
   background: #f7f8f9;
   border-top: 1px solid var(--coolgray02--);
+}
+
+/* thema */
+.dark {
+  background: #292929;
+}
+.dark p,
+.dark span,
+.dark a,
+.dark li {
+  color: #fff;
+}
+.dark .footer_txt,
+.dark .footer_txt > * {
+  color: #454545;
+}
+.dark .page_bn_wr {
+  background: #454545;
+  border: 1px solid #404040;
+}
+.nav_work {
+  width: 100%;
+  height: 100%;
+}
+/*  다크모드 내 kit 리스트 */
+.dark .kit_list_item {
+  width: 100%;
+  border-bottom: 1px solid #404040;
+  padding: 30px 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.kit_info {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-left: 24px;
+}
+.dark .thumb_img_wr > img {
+  max-width: 281px;
+}
+.dark .kit_auth {
+  color: #9ba6b8;
+}
+.dark .bookmark_num,
+.dark .view_num {
+  color: #bdc6d4;
+}
+.dark .kit_list > *:nth-child(4n) ~ * {
+  margin-top: 0;
+}
+
+.dark .kit_tabList {
+  border-bottom: 1px solid #404040;
+  margin-top: 7px;
+}
+.dark .kit_tabList li {
+  padding: 11px 28px;
+  position: relative;
+  cursor: pointer;
+}
+.dark .kit_tabList li.act:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--mainRed--);
+  display: block;
 }

@@ -31,6 +31,31 @@
       "view": 382,
       "thumbnail": "/images/sample.jpg",
       "id": "133332"
+    },
+
+    {
+      "title": "간편한 일러스트 제작 키트",
+      "auth": "작가2",
+      "steam": 125,
+      "view": 382,
+      "thumbnail": "/images/sample.jpg",
+      "id": "45"
+    },
+    {
+      "title": "간편한 일러스트 제작 키트3",
+      "auth": "작가3",
+      "steam": 125,
+      "view": 382,
+      "thumbnail": "/images/sample.jpg",
+      "id": "e78"
+    },
+    {
+      "title": "작품명4",
+      "auth": "작가4",
+      "steam": 125,
+      "view": 382,
+      "thumbnail": "/images/sample.jpg",
+      "id": "we87"
     }
   ]
 }
