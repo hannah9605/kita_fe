@@ -26,10 +26,22 @@ export default function KitPostList({ data, title }) {
   return (
     <div className="kit_list_wr">
       {title === "search" ? null : (
-        <p className="flex_start menu_title">
-          <img src="/images/title.png" alt="bullet" />
-          <span>{ListTitle[title] ? ListTitle[title] : null}</span>
-        </p>
+        <div className="flex_between">
+          <p className="flex_start menu_title">
+            <img src="/images/title.png" alt="bullet" />
+            <span>{ListTitle[title] ? ListTitle[title] : null}</span>
+          </p>
+          {title === "list" ? (
+            <select className="select_filter">
+              <option>최신순</option>
+              <option>인기순</option>
+            </select>
+          ) : (
+            <Link to="/KitList" style={{ width: "auto" }}>
+              + 더보기
+            </Link>
+          )}
+        </div>
       )}
       <PhotoTable
         data={

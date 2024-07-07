@@ -91,7 +91,7 @@
   font-weight: 600;
 }
 .red {
-  color: var(--mainRed--);
+  color: var(--mainRed--) !important;
 }
 td.red {
   font-weight: 700;
@@ -361,6 +361,13 @@ input[type="text"] {
   border-top: 1px solid var(--coolgray02--);
 }
 
+/*  */
+.select_filter {
+  border: 1px solid #d7dce4;
+  border-radius: 3px;
+  padding: 10px;
+  box-shadow: 0 0 17px rgba(0, 0, 0, 0.05);
+}
 /* thema */
 .dark {
   background: #292929;

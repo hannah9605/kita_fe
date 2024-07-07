@@ -18,7 +18,6 @@ const PageBanner = ({ page }) => {
   };
   const subTitle = {
     list: "여기에 설명 한줄 이정도 길이로 필요할것같습니다. 의견 부탁드립니다.",
-    search: <input type="text" placeholder="검색어를 입력해주세요." />,
     support:
       "여기에 설명 한줄 이정도 길이로 필요할것같습니다. 의견 부탁드립니다.",
     mypage: "윗줄 포함 들어갈 문구 추천받습니다.",
