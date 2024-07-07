@@ -25,7 +25,12 @@ export default function KitPostList({ data, title }) {
   };
   return (
     <div className="kit_list_wr">
-      {title === "search" ? null : (
+      {title === "search" ? (
+        <select className="search select_filter">
+          <option>최신순</option>
+          <option>인기순</option>
+        </select>
+      ) : (
         <div className="flex_between">
           <p className="flex_start menu_title">
             <img src="/images/title.png" alt="bullet" />

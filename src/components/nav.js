@@ -64,7 +64,8 @@ const Nav = () => {
               <ul className={style.nav_menu}>
                 <li>
                   <Link className="logo" to="/workspace">
-                    KIT <span>: 작업실</span>
+                    KIT <b>:</b>
+                    <span> 작업실</span>
                   </Link>
                 </li>
               </ul>

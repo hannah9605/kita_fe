@@ -57,6 +57,11 @@
 }
 .logo span {
   color: var(--coolgray01--);
+  font-weight: 400;
+}
+.dark .logo span {
+  font-family: "JalnanGothic";
+  font-size: 24px;
 }
 .nav {
   height: 80px;
@@ -100,6 +105,11 @@ td.red {
   font-weight: 600;
   font-size: 16px;
 }
+.font_24 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
 /* 버튼 */
 .btn {
   display: flex;
@@ -368,14 +378,19 @@ input[type="text"] {
   padding: 10px;
   box-shadow: 0 0 17px rgba(0, 0, 0, 0.05);
 }
+.search.select_filter {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 /* thema */
 .dark {
   background: #292929;
 }
-.dark p,
-.dark span,
-.dark a,
-.dark li {
+.dark .kit_list_wr p,
+.dark .kit_list_wr span,
+.dark .kit_list_wr a,
+.dark .kit_list_wr li {
   color: #fff;
 }
 .dark .footer_txt,

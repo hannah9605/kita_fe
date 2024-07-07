@@ -14,7 +14,14 @@ const PageBanner = ({ page }) => {
       </>
     ),
     bookmark: "찜목록",
-    workspace: "작업실에 오신것을 환영합니다.",
+    workspace: (
+      <div className="flex_between">
+        <p className="logo">
+          KIT <span>: 작업실</span>
+        </p>
+        에 오신것을 환영합니다.
+      </div>
+    ),
   };
   const subTitle = {
     list: "여기에 설명 한줄 이정도 길이로 필요할것같습니다. 의견 부탁드립니다.",
@@ -22,8 +29,6 @@ const PageBanner = ({ page }) => {
       "여기에 설명 한줄 이정도 길이로 필요할것같습니다. 의견 부탁드립니다.",
     mypage: "윗줄 포함 들어갈 문구 추천받습니다.",
     bookmark:
-      "여기에 설명 한줄 이정도 길이로 필요할것같습니다. 의견 부탁드립니다.",
-    workspace:
       "여기에 설명 한줄 이정도 길이로 필요할것같습니다. 의견 부탁드립니다.",
   };
 

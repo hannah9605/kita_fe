@@ -28,11 +28,17 @@ export default function MyKitList({ data, title }) {
 
   return (
     <div className="kit_list_wr">
-      <p className="flex_start menu_title">
-        <span>내 KIT 리스트</span>
-        <div style={{ marginLeft: "20px" }}>
-          <input type="text" />
+      <p className="flex_between ">
+        <div className="flex_start menu_title">
+          <span>내 KIT 리스트</span>
+          <div style={{ marginLeft: "20px" }}>
+            <input type="text" />
+          </div>
         </div>
+        <select className=" select_filter">
+          <option>최신순</option>
+          <option>인기순</option>
+        </select>
       </p>
       <ul className="flex_start kit_tabList">
         {tabList?.map((tabItem, index) => {

@@ -3,7 +3,6 @@ import { useLocation } from "react-router-dom";
 // import axios from "axios";
 // component
 import KitPostList from "../components/board/gallery/kitPostList";
-import PageBanner from "../components/pageBanner";
 
 export default function Search() {
   const location = useLocation();
@@ -58,15 +57,19 @@ export default function Search() {
 
   return (
     <div className=" layout " id="search">
-      <PageBanner page={"search"}></PageBanner>
+      {/* <PageBanner page={"search"}></PageBanner> */}
       {/* 리스트 */}
       <div style={{ marginBottom: "200px" }}>
         <div>
           <p style={{ margin: "100px 0 6px" }} className="menu_title">
             검색 결과
           </p>
-          <p>
-            ‘{word}’ 관련 검색 결과가<span>{searchResult?.length}</span>건
+          <p
+            className="font_16"
+            style={{ color: "var(--coolgray06--)", fontWeight: 500 }}
+          >
+            ‘{word}’ 관련 검색 결과가
+            <span className="red font_24"> {searchResult?.length}</span>건
             검색되었습니다.
           </p>
         </div>
